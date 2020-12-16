@@ -1,2 +1,5 @@
-# HTML-and-CSS-Course
-The Tech Academy - HTML and CSS Course Projects
+# HTML and CSS Course  
+
+### The Tech Academy Projects
+
+>This is the repository for my course projects.
