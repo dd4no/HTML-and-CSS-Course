@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>A Basic Form</h1>
+		<form action="" method="get">
+			<fieldset>
+				<legend>Basic Info:</legend>
+				First Name: <input type="text" value=""><br>
+				Hometown: <input type="text" value=""><br>
+				<br>
+				<input type="radio" name="pets" value="Cats">Cats<br>
+				<input type="radio" name="pets" value="Dogs">Dogs<br>
+				<input type="radio" name="pets" value="Both">Both<br>
+			</fieldset>
+			<br>
+			<fieldset>
+				<legend>Health:</legend>
+				<input type="checkbox" name="health1">Smoker?
+				<input type="checkbox" name="health2">Drinker?<br>
+			</fieldset>
+			<br>
+			School Status:<br>
+			<select name="school">
+				<option value="Full-time">Full-time</option>
+				<option value="Part-time">Part-time</option>
+			</select>
+			<br>
+			<br>
+			Comments:<br>
+			<textarea name="comments" rows="5" cols="30">
+			</textarea>
+			<br>
+			<br>
+			To try out a useless button:<br>
+			<button type="button" onclick="alert('This button does nothing')">Click Here!</button>
+			<br>
+			<br>
+			<input type="submit" value="Submit">
+			<input type="reset">			
+		</form>
+	</body>
+</html>
