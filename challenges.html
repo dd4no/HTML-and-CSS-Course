@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang= "en">
+
+<!-- Dave Defourneaux           -->
+<!-- dave.defourneaux@gmail.com -->
+<!-- github.com/dd4no           -->
+
+	<head>
+		<meta charset= "utf-8">
+		<title>HTML + CSS Challenges</title>
+		<!-- <link rel="stylesheet" href=""> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            /* Center image and apply filter and rounded corners*/
+            #photo1 {
+                display: block;
+                margin: 10% auto;
+                width: 50%;
+                filter: invert(100%);
+                border-radius: 15px;
+            }
+
+            /* Add footer with bold and centered text */
+            footer {
+                text-align: center;
+                margin: 30px;
+                padding: 10px;
+                background-color: orange;
+                color: blue;
+                font-weight: bold;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            
+            /* Format a table with borders */
+            table, td {
+                border: 3px solid black;
+                margin: 5px auto;
+                border-spacing: 5px;
+                border-collapse: collapse;
+            }
+
+            /* Center cell text and add padding */
+            th, td {
+                padding: 15px 30px;
+                text-align: center;
+            }
+
+            /* Colorize table header */
+            th {
+                background-color: cadetblue;
+            }
+            
+            /* Colorize specific rows */
+            #school {
+                background-color: lightgreen;
+            }
+
+            #work {
+                background-color: red;
+            }
+
+            /* Place text over an image */
+            .img-container {
+                margin: 20px;
+                position: relative;
+                text-align: center;
+                color: white;
+            }
+
+            .text-box {
+                position:absolute;
+                padding: 5px;
+                width: 100%;
+                height: 20px;
+                top: 90%;
+            }
+
+            /* Format Navbar */
+            .navbar {
+                top: 0;
+                width: 100%;
+                height: 50px;
+                position: fixed;
+                z-index: 1;
+                background-color: silver;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                display: block;
+            }
+
+            .navbar a {
+                float: left;
+                display: block;
+                text-align: center;
+                padding:10px;
+                text-decoration: none;
+                color: green;
+
+            }
+
+            .navbar a:hover {
+                background-color: darkorange;
+                color: red;
+            }
+
+            /* Two-column Layout */
+            .column {
+                flex: 50%;
+                text-align: center;
+                padding: 10px;
+                border: 1px solid black;
+                margin: 5px;
+            }
+
+            .row {
+               display: flex;
+            }
+
+            #column1 {
+                background-color: black;
+                color: yellow;
+            }
+
+            #column2 {
+                background-color: gray;
+                color: red;
+            }
+
+            /* Paragraph Hover */
+            p:hover {
+                background: yellow;
+                color: green;
+            }
+
+            #paragraph {
+                text-align: center;
+            }
+
+            /* Image Fade */
+            .fade-container {
+                position: relative;
+                width: 50%;
+                margin: 10px auto;
+            }
+
+            .photo2 {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                transition: .8s ease;
+                background-color: lightslategrey;
+            }
+
+            .fade-container:hover .overlay {
+                opacity: 1;
+            }
+
+            .overlay-text {
+                color: purple;
+                font-size: 30px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+            }
+
+
+        </style>
+	</head>
+	
+	<body>
+
+        <!-- Navbar -->
+        <nav class="navbar">
+                <a href="#image1">Styled Image</a>
+                <a href="#table">Table</a>
+                <a href="#footer">Footer</a>
+                <a href="#image2">Image with Text</a>
+                <a href="#2col">Two-column Layout</a>
+                <a href="#paragraph">Paragraph Hover</a>
+                <a href="#fade">Image Fade</a>
+                <a href="#video">Video</a>
+        </nav>
+       
+        <!-- Image with CSS styling -->
+        <div id="image1" class="img-container">
+          <img id="photo1" src="guitar.jpg" alt="guitar">
+        </div>
+
+        <!-- Table Example -->
+        <table id="table">
+            <tr>
+                <th colspan="3">DAILY AGENDA</th>
+            </tr>
+            <tr>
+                <th>Hour</th>
+                <th>Task</th>
+                <th>Duration</th>
+            </tr>
+            <tr>
+                <td>6 am</td>
+                <td>Wake up</td>
+                <td>2 hrs</td>
+            </tr>
+            <tr id="work">
+                <td>8 am</td>
+                <td>Work</td>
+                <td>4 hrs</td>
+            </tr>
+            <tr>
+                <td>12 pm</td>
+                <td>Lunch</td>
+                <td>1 hr</td>
+            </tr>
+            <tr id="school">
+                <td>1 pm</td>
+                <td>School</td>
+                <td>5 hrs</td>
+            </tr>
+            <tr>
+                <td>6 pm</td>
+                <td>Dinner</td>
+                <td>1 hr</td>
+            </tr>
+            <tr id="school">
+                <td>7 pm</td>
+                <td>School</td>
+                <td>3 hrs</td>
+            </tr>
+            <tr>
+                <td>10 pm</td>
+                <td>Sleep</td>
+                <td>8 hrs</td>
+            </tr>
+        </table>
+
+        <!-- Positioning text on an image -->
+        <div class="img-container" id="image2">
+            <img src="sunset.jpg" alt="sunset" width="600" height="400">
+            <div class="text-box">A beautiful photograph</div>
+        </div>
+
+        <!-- Two-column Layout -->
+        <div class="row" id="2col">
+            <div class="column" id="column1"><h2>Primary</h2><p>Yellow text on a black background</p></div>
+            <div class="column" id="column2"><h2>Secondary</h2><p>Red text on a gray background</p></div>
+        </div>
+
+        <!-- Hover Paragraph -->
+        <div id="paragraph">
+            <blockquote><p>"Verbal communcication is open to interpretation, just like the songs are.  I've<br>
+                prefaced interviews in the past by saying that I can't do anything but lie.  All<br>
+                talk is lying, and I'm lying now.  And that's true too.  Go hear me play.<br>
+                That's me - that's what I have to say.  That's the form my thoughts have taken"</p></blockquote><cite>-Jerry Garcia</cite>
+        </div>
+
+        <!-- Image Overly Fade -->
+        <div class="fade-container" id="fade">
+            <img src="jerry-garcia.jpg" alt="Jerry" class="photo2">
+            <div class="overlay">
+                <div class="overlay-text">Hey Now!</div>
+            </div>
+        </div>
+
+        <!-- Display Video -->
+        <div class="img-container" id="video">
+            <video width="600" autoplay muted loop><source src="moon.mp4" type="video/mp4"></video>
+            <div class="text-box">M-O-O-N, that spells Moon</div>
+        </div>
+        <!-- Footer -->
+        <footer id="footer">
+            <p>Dave Defourneaux &nbsp | &nbsp dave.defourneaux@gmail.com</p>
+
+        </footer>
+				
+	</body>
+
+</html>

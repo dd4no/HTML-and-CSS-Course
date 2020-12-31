@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+        <title>Title</title>
+        <style>
+            div {
+                margin:10px;
+                padding:10px;
+            }
+
+            #grad {
+                background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+            }
+        </style>
+	</head>
+	<body>
+        <div id="grad">
+            <h1>Map and Area</h1>
+            <p>Click boxes to open new page</p>
+
+            <img src="guitar.jpg" alt="guitar" usemap=#musicmap width="500" height="500">
+
+            <map name="musicmap">
+                <area shape="rect" coords="200,150,300,0" alt="Square" href="dog.html">
+                <area shape="rect" coords="0,500,100,400" alt="other" href="Helloworld.html">
+                <area shape="circle" coords="230,350,80" alt="Circle" href="form.html">
+            </map>
+        </div>
+	</body>
+</html>
