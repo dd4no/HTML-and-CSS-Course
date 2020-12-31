@@ -30,8 +30,8 @@
         -Practice code documents demonstrating CSS with HTML.<br>
     *Basic_HTML_and_JavaScript_1*<br>
         -Practice code documents demonstrating very rudimentary JavaScripting.<br>
-    *Root Documents*<br>
-        -The various documents in the root of the directory all demonstrate
-        a specific concept, or assignment task, and are roughly named as to
-        what they generally pertain to.  Several sample images for practice
-        use are also located here.
+    *Root Directory*<br>
+        -The various documents in the root directory all demonstrate
+        a specific concept, or assignment task (or combination of them),
+        and are roughly named as to what they generally pertain to.  
+        Several sample images for practice use are also located here.
