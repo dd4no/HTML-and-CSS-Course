@@ -1,0 +1,110 @@
+/*  Dave Defourneaux	        */	    
+/*  dave.defourneaux@gmail.com	*/
+/*  github.com/dd4no		    */
+
+/****** GENERAL STYLES *****/
+* {
+    box-sizing: border-box; /* Universally set boxes to border within */
+}
+
+html {
+    font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
+    font-size: 16px; /* Default font family and size */
+}
+
+a {
+    color: yellowgreen; /* Set color for all anchor elements */
+}
+
+body {
+    margin: 0%; /* Display site to edge of browser screen */
+}
+
+h1 {
+
+}
+
+p {
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    text-align: center;
+}
+
+li {
+    float: left;
+    padding: 20px;
+    margin: 5px;
+}
+
+li:hover {
+    
+}
+
+li a:hover {
+    color: yellow;
+    background-color: gray;
+    font-weight: bold;
+}
+
+.navbar {
+    padding: 0px;
+    border:3px double black;
+    border-radius: 5px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(25,25,25,0.75);
+    opacity: 90%;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.title-text {
+
+}
+
+.video-text {
+
+}
+
+.row {
+
+}
+
+.row:after {
+    content:" ";
+    display: table;
+    clear: both;
+}
+
+.image-box {
+
+}
+
+.image-box-tall {
+
+}
+
+.text-box {
+
+}
+
+.text-box-tall {
+
+}
+
+#video {
+
+}
+
+#logo li {
+    font-size: large;
+    font-weight: 900;
+    padding: 0;
+}
