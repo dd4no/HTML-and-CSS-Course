@@ -2,7 +2,9 @@
 /*  dave.defourneaux@gmail.com	*/
 /*  github.com/dd4no		    */
 
-/****** GENERAL STYLES *****/
+
+/***********  GENERAL STYLES  **********/
+
 * {
     box-sizing: border-box; /* Universally set boxes to border within */
 }
@@ -12,66 +14,107 @@ html {
     font-size: 16px; /* Default font family and size */
 }
 
-a {
-    color: yellowgreen; /* Set color for all anchor elements */
-}
-
 body {
     margin: 0%; /* Display site to edge of browser screen */
+    background-color: gray;
 }
 
-h1 {
-
+a {
+    color: dodgerblue; /* Set color for all anchor elements */
+    font-weight: bold;
+    text-decoration: none;
 }
 
-p {
-
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
+h1, h2, h3, h4, h5, p {
     text-align: center;
 }
 
-li {
-    float: left;
-    padding: 20px;
-    margin: 5px;
+footer  {
+    padding-top: 2%;
+    bottom: 0;
+   /* visibility: hidden; /* Hide element */
 }
 
-li:hover {
+
+/**********  NAVBAR  **********/
+
+/* .navwrap {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+}*/
+
+.navbar {
+    margin: 5px auto 0 auto;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    text-align: center;
+    
     
 }
 
-li a:hover {
-    color: yellow;
-    background-color: gray;
-    font-weight: bold;
-}
-
-.navbar {
-    padding: 0px;
-    border:3px double black;
-    border-radius: 5px;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    background-color: rgba(25,25,25,0.75);
-    opacity: 90%;
-    font-size: 1.5em;
+ul {
+    padding: 0;
+    border:3px double rgb(67, 25, 255);
+    border-radius: 10px;
+    margin: 0 auto;
     text-align: center;
+    display: block;
+    list-style: none;
+    background-color: rgb(25,25,25);
+    opacity: 70%;
+    width: 95%;
+   
+    
 }
 
-.title-text {
+li {
+    display: inline-block;
+    padding: 5px 50px;
+    font-size: 1.5em;
+}
 
+li a:hover {
+    color: lime;
+}
+
+ul:hover {
+    box-shadow: 0 0 5px lightblue inset;
+}
+
+
+/**********  VIDEO  **********/
+
+#video {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-width: 100%;
+    visibility: hidden; /* Hide element */
 }
 
 .video-text {
+    padding: 100px;
+    width: 100%;
+    background: rgba(5,5,5,0.1);
+    color: white;
+    position: relative;
 
+    
 }
+
+.title-text {
+    font-size: 3em;
+    letter-spacing: 5px;
+    text-shadow: 3px 3px 3px rgb(67, 25, 255);
+}
+
+/**********  TABLE  **********/
 
 .row {
 
@@ -84,27 +127,38 @@ li a:hover {
 }
 
 .image-box {
+    padding: 10px;
+    width: 50%;
+    height: 400px;
+    float: left;
+    background-color: lightgrey;
+    /*background-image: url('../images/circuits.jpg');*/
+    overflow: hidden;
 
 }
 
 .image-box-tall {
+    padding-top: 5%;
+    height: 500px;
 
 }
 
 .text-box {
+    padding: 10px;
+    width: 50%;
+    height: 400px;
+    float: left;
+    background-color: wheat;
 
 }
 
 .text-box-tall {
-
+    padding-top: 5%;
+    height: 500px;
 }
 
-#video {
 
-}
-
-#logo li {
-    font-size: large;
-    font-weight: 900;
-    padding: 0;
+.logo {
+    color: rgb(67, 25, 255);
+    font-size: 2em;
 }
