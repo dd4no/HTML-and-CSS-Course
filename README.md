@@ -6,6 +6,9 @@
 ---
 ### PROJECT LIST
 
+**Portfolio_Website**<br>
+    -Final HTML and CSS course project to create a portfolio website.
+
 **Complete_Website_Project**<br>
     -A project utilizing HTML and CSS to create a functioning website.
     The content is a sample gallery of my photography.
