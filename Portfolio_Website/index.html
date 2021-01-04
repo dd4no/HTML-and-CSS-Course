@@ -11,10 +11,11 @@
 		<link rel="stylesheet" type="text/css" href="./css/portfolio.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
-	
+    
+    <!--====================  BODY ====================-->
 	<body>
-        
-        <!-- NAVBAR -->        
+
+        <!----------  NAVBAR  ---------->        
         <div class="navbar">
             <ul class="menu">
                 <li><a href="#home">HOME</a></li>
@@ -23,74 +24,120 @@
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
         </div>
-     
+        <!----------  END NAVBAR  ---------->
 
-        <!-- BACKGROUND VIDEO -->
+        <!----------  BACKGROUND VIDEO  ---------->
         <div id="home">
             <video autoplay muted loop id="video">
                 <source src="./images/video/background_video.mp4" type="video/mp4">
                 Your browser does not support HTML5 video
             </video>
         </div>
+        <!----------  END BACKGROUND VIDEO  ---------->
 
-        <!-- VIDEO TEXT -->
-        <div class="video-text">
-            <h1 class="title-text">Dave Defourneaux</h1>
-            <h3>portfolio website</h3>
+        <!----------  TITLE TEXT  ---------->
+        <div class="title-text">
+            <h1 class="title">Dave Defourneaux</h1>
+            <h2>portfolio website</h2>
             <h5><a href="https://github.com/dd4no" target="_blank">github.com/dd4no</a></h5>
             <br>
             <br>
             <br>
         </div>
+        <!----------  END TITLE TEXT  ---------->
 
-        <!-- ABOUT SECTION -->
-        <div class="row" id="about">
-            <div class="image-box">
-                <img src="./images/me4.jpg" alt="Me">
+        <!----------  CONTENT TABLE  ----------> 
+        <div class="content">
+            
+            <!-- ABOUT - Row 1 -->
+            <div class="row" id="about">
+                <div class="image-box">
+                    <img src="./images/me4.jpg" alt="Me">
+                </div>
+                <div class="text-box">
+                    <h1>ABOUT ME</h1>
+                    <div class="text-box-text">
+                        Coding is something that has always interested in me.  
+                        I enjoy the process of typing instructions in, 
+                        running the program, seeing the results, 
+                        going back and modifying something, 
+                        and watching the changes take place.  
+                        I am creative and enjoy the ability to create things 
+                        from scratch using code.  I first learned to program using 
+                        BASIC on an Apple IIe when I was in middle-school, 
+                        had some exposure to C++ when I was getting my CS degree, 
+                        have written some database applications with MS Access 
+                        utilizing Visual Basic code, have done shell scripting in Unix,
+                        and have created a number of personal websites using 
+                        HTML, CSS, and just a bit of JavaScript.  
+                        Every time I take on a new coding project, 
+                        I realize just how much I enjoy it, which is why I am 
+                        currently enrolled in a full-time coding bootcamp at
+                        <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a>
+                    </div>
+                </div>
             </div>
-            <div class="text-box">
-                <h1>ABOUT ME</h1>
-                <p>
-                    Lifetime student of computers and computer science
-                </p>
+            <!-- END ABOUT -->
+
+            <!-- GITHUB - Row 2 -->
+            <div class="row" id="github">
+                <div class="text-box">
+                    <h1>GITHUB PROJECTS</h1>
+                    <div class="text-box-text">
+                        <h3><a href="https://github.com/dd4no" target="_blank">dd4no on GitHub</a></h3>
+                        <ul>
+                            <li><a href="https://github.com/dd4no/hello-world" target="_blank">Hello World</a></li>
+                                <ul>
+                                    <li>Odds and Ends for practice and fun</li>
+                                </ul>
+                            <li><a href="https://github.com/dd4no/HTML-and-CSS-Course/tree/main/Complete_Website_Project" target="_blank">Complete Website Project</a></li>
+                                <ul>
+                                    <li>Example photography gallery</li>
+                                </ul>
+                            <li><a href="https://github.com/dd4no/HTML-and-CSS-Course/tree/main/One-Page%20Website" target="_blank">One-Page Website Project</a></li>
+                                <ul>
+                                    <li>Music Exchange Club home page</li>
+                                </ul>
+                            <li><a href="https://github.com/dd4no/HTML-and-CSS-Course" target="_blank">Tech Academy Assignment</a></li>
+                                <ul>
+                                    <li>Various code examples and demonstrations</li>
+                                </ul>
+                        </ul>
+                    </div>                           
+                </div>
+                <div class="image-box">
+                    <img src="./images/me2.jpg" alt="Me">
+                </div>
             </div>
+            <!-- END GITHUB -->
+
+            <!-- CONTACT - Row 3 -->
+            <div class="row" id="contact">
+                <div class="image-box">
+                    <img src="./images/me3.jpg" alt="Me">
+                </div>
+                <div class="text-box">
+                    <h1>CONTACT ME</h1>
+                    <form action="https://formspree.io/f/xayllvge" method="post">
+                        <input type="text" name="Name" placeholder="Please enter your name">
+                        <input type="text" name="Email"placeholder="Please enter your email address">
+                        <textarea rows="8" name="Comments"placeholder="Please leave me a comment"></textarea>
+                        <input type="submit" value="SEND">
+                    </form>
+                </div>
+            </div>
+            <!-- END CONTACT -->
+        
         </div>
+        <!----------  END CONTENT TABLE  ---------->
 
-        <!-- GITHUB SECTION -->
-        <div class="row" id="github">
-            <div class="text-box">
-                <h1>GITHUB PROJECTS</h1>
-                <p>
-                    View my coding projects here:<br>
-                    <a href="https://github.com/dd4no" target="_blank">dd4no on GitHub</a>
-                </p>    
-            </div>
-            <div class="image-box">
-                <img src="./images/me2.jpg" alt="Me">
-            </div>
-        </div>
-
-        <!-- CONTACT SECTION -->
-        <div class="row" id="contact">
-            <div class="image-box">
-                <img src="./images/me3.jpg" alt="Me">
-            </div>
-            <div class="text-box">
-                <h1>CONTACT ME</h1>
-                <form action="https://formspree.io/f/xayllvge" method="post">
-                    <input type="text" name="Name" placeholder="Please enter your name">
-                    <input type="text" name="Email"placeholder="Please enter your email address">
-                    <textarea rows="8" name="Comments"placeholder="Please leave me a comment"></textarea>
-                    <input type="submit" value="SEND">
-                </form>
-            </div>
-        </div>
-
-        <!-- FOOTER -->
+        <!----------  FOOTER  ---------->
         <footer>
             <p>&copy; Dave Defourneaux &nbsp | &nbsp <a href="http://www.davedefourneaux.com" target="_blank">www.davedefourneaux.com</a></p>
         </footer>
+        <!----------  END FOOTER  ---------->
 
-	</body>
+    </body>
+    <!--====================  END BODY  ====================-->
 
 </html>

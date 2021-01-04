@@ -5,62 +5,81 @@
 
 /***********  GENERAL STYLES  **********/
 
-* {
-    box-sizing: border-box; /* Universally set boxes to border within */
+* { /* Universally set boxes to border within */
+    box-sizing: border-box; 
 }
 
-html {
+html { /* Default font family and size */
     font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
-    font-size: 16px; /* Default font family and size */
+    font-size: 16px; 
 }
 
-body {
-    margin: 0%; /* Display site to edge of browser screen */
-    /*background-color: gray;*/
+body { /* Display site to edge of browser screen */
+    margin: 0%; 
 }
 
-a {
-    color: dodgerblue; /* Set color for all anchor elements */
+a { /* Set appearance for all anchor elements */
+    color: dodgerblue; 
     font-weight: bold;
     text-decoration: none;
 }
 
+a:hover { /* Set all anchor hover effects */
+    text-shadow: 0 0 10px lime;
+}
+
+ /* Center align all headings and paragraphs */
 h1, h2, h3, h4, h5, p {
     text-align: center;
 }
 
-h1 {
-    border: 1px solid white;
-    border-radius: 10px;
-}
-
-img {
+img { /* Add a border to images and set height */
     padding: 0;
     border: 2px dotted white;
     box-shadow: -5px -3px 10px white;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
 }
 
-footer  {
+footer  { /* Set footer container and appearance */
     padding: 2px;
-    /*background-color: black;*/
     background-color: rgb(25,25,25);
     opacity: 90%;
     color: white;
-    /*visibility: hidden;*/
 }
 
+/* Page animation on load */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Shrink images and center in column for small screens */
+@media screen and (max-width: 576px) {
+    img { 
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+/**********  END GENERAL STYLES **********/
 
 /**********  NAVBAR  **********/
 
-.navbar {
+.navbar { /* Navbar container */
     margin: 5px auto 0 auto;
     width: 100%;
     position: fixed;
     z-index: 1;
-    text-align: center;    
+    text-align: center;
+    animation: moveNav 3s;    
 }
 
-.menu {
+.menu { /* Navbar list */
     padding: 0;
     border:3px double rgb(67, 25, 255);
     border-radius: 10px;
@@ -73,65 +92,82 @@ footer  {
     width: 80%;    
 }
 
-.menu li {
+.menu li { /* Navbar list items */
     display: inline-block;
     padding: 5px 50px;
     font-size: 1.5em;
 }
 
-.menu li a:hover {
-    color: lime;
-}
-
-.menu:hover {
+.menu:hover { /* Navbar hover effect */
     box-shadow: 0 0 5px lightblue inset;
 }
 
+@keyframes moveNav { /* Animate Navbar on page load */
+    from {top: -100vw;}
+    to {top: 0vw;}
+}
 
-/**********  VIDEO  **********/
+/* Reduce Navbar to equal spaced cells for small screens */
+@media screen and (max-width: 576px) {
+    .navbar a{
+        width: 25%;
+        font-size: 12px;
+    }
+}
+/**********  END NAVBAR **********/
 
-#video {
+/**********  BACKGROUND VIDEO  **********/
+
+#video { /* Video container */
     position: fixed;
     z-index: -1;
     top: 0;
     right: 0;
     min-width: 100%;
-    min-height: 100%;
-    /*visibility: hidden; /* Hide element */
+    min-height: 100%;    
 }
+/**********  END BACKGROUND VIDEO  **********/
 
-.video-text {
+/**********  TITLE TEXT  **********/
+.title-text { /* Title Text container */
+    position: relative;
     padding: 100px;
     width: 100%;
-    background: rgba(5,5,5,0.1);
-    color: white;
-    position: relative;    
+    background-color: rgba(5,5,5,0.1);
+    font-family: 'Lucida Console';
+    color:rgb(101, 180, 216);
+    letter-spacing: 5px;
+    text-shadow: 3px 3px 10px rgb(67, 25, 255);
+    border: none;
+    animation: fadeInAnimation ease 6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
-.title-text {
-    font-family: 'Lucida Sans';
+.title-text h1 { /* Title */
     font-size: 3em;
-    letter-spacing: 5px;
-    text-shadow: 3px 3px 3px rgb(67, 25, 255);
     border: none;
 }
 
-.title-text:hover {
+.title-text h1:hover { /* Title hover effect */
     text-shadow: 0 0 10px rgb(67,25,255);
-    transform: scale(1.1);
-    transition: transform 1s;
+    transform: scale(0.9);
+    transition: transform 1.5s ease-in-out;
+}
+/**********  END TITLE TEXT  **********/
+
+/**********  CONTENT TABLE  **********/
+/* ABOUT , GITHUB , CONTACT, IMAGES  */
+
+.content { /* Container for main content table */
+    padding: 0;
+    margin: 0;
+    animation: fadeInAnimation ease 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
-
-/**********  TABLE  **********/
-
-.row:after {
-    content:" ";
-    display: table;
-    clear: both;
-}
-
-.image-box {
+.image-box { /* Image container */
     padding: 50px;
     width: 50%;
     height: 500px;
@@ -144,15 +180,14 @@ footer  {
     text-align: center;
 }
 
-.image-box-tall {
-    padding-top: 5%;
-    height: 500px;
-
+img:hover { /* Image hover effect */
+    transform: scale(0.9);
+    transition: transform 2s ease-in-out;
 }
 
-.text-box {
+.text-box { /* Text or Form container */
     padding: 10px;
-    padding-top: 5%;
+    padding-top: 3%;
     width: 50%;
     height: 500px;
     float: left;
@@ -160,30 +195,52 @@ footer  {
     text-align: center;
 }
 
-.text-box h1 {
+.text-box h1 { /* Text container headings */
+    border: 1px solid white;
+    border-radius: 10px;
     margin: 20px auto;
     width: 60%;
 }
 
-.text-box p {
-    margin: 0 auto;
-    width: 80%;
-    height: 300px;
+.text-box-text { /* Text container paragraphs */
+    padding: 20px;
+    padding-top: 5%;
     border: 1px solid white;
     border-radius: 10px;
+    margin: 10px auto;
+    width: 80%;
+    height: 300px;
+    background-color: rgba(5,5,5,0.6);  
+    text-align: justify; 
+    line-height: 1.3em; 
 }
 
-
-.text-box-tall {
-
-    padding-top: 5%;
-    height: 500px;
+.row:after { /* Resets left and right floating after each row */
+    content:" ";
+    display: table;
+    clear: both;
 }
 
+/* Add scroll bar for overflowing text on small screens */
+@media screen and (max-width: 576px) {
+    .text-box {
+        overflow: auto;
+    }
+}
+/**********  END CONTENT TABLE **********/
 
-/**********  FORM  **********/
+/**********  CONTACT FORM  **********/
 
-input[type=text], textarea {
+form { /* Form container */
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 80%;
+    background-color: rgba(5,5,5,0.6);
+}
+
+input[type=text], textarea { /* Text input fields */
     padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
@@ -194,7 +251,12 @@ input[type=text], textarea {
     resize: none;
 }
 
-input[type=submit] {
+/* Text input hover effect */
+input[type=text]:hover, textarea:hover{
+    box-shadow: 2px 2px 3px black inset;
+}
+
+input[type=submit] { /* Send button */
     padding: 10px 15px;
     border: 1px solid black;
     border-radius: 10px;
@@ -206,12 +268,8 @@ input[type=submit] {
     display: block;
 }
 
-form {
-    padding: 10px;
-    border: 1px solid white;
-    border-radius: 10px;
-    margin: 0 auto;
-    width: 80%;
-    background-color: rgba(5,5,5,0.6);
+input[type=submit]:hover { /* Send button hover effect */
+    box-shadow: 0 0 10px lime, 2px 2px 3px black inset;
+    text-shadow: 0 0 10px lime;
 }
-
+/**********  END CONTACT FORM **********/
