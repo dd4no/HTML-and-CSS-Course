@@ -16,7 +16,7 @@ html {
 
 body {
     margin: 0%; /* Display site to edge of browser screen */
-    background-color: gray;
+    /*background-color: gray;*/
 }
 
 a {
@@ -29,33 +29,38 @@ h1, h2, h3, h4, h5, p {
     text-align: center;
 }
 
+h1 {
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+img {
+    padding: 0;
+    border: 2px dotted white;
+    box-shadow: -5px -3px 10px white;
+}
+
 footer  {
-    padding-top: 2%;
-    bottom: 0;
-   /* visibility: hidden; /* Hide element */
+    padding: 2px;
+    /*background-color: black;*/
+    background-color: rgb(25,25,25);
+    opacity: 90%;
+    color: white;
+    /*visibility: hidden;*/
 }
 
 
 /**********  NAVBAR  **********/
-
-/* .navwrap {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    overflow: hidden;
-}*/
 
 .navbar {
     margin: 5px auto 0 auto;
     width: 100%;
     position: fixed;
     z-index: 1;
-    text-align: center;
-    
-    
+    text-align: center;    
 }
 
-ul {
+.menu {
     padding: 0;
     border:3px double rgb(67, 25, 255);
     border-radius: 10px;
@@ -64,23 +69,21 @@ ul {
     display: block;
     list-style: none;
     background-color: rgb(25,25,25);
-    opacity: 70%;
-    width: 95%;
-   
-    
+    opacity: 90%;
+    width: 80%;    
 }
 
-li {
+.menu li {
     display: inline-block;
     padding: 5px 50px;
     font-size: 1.5em;
 }
 
-li a:hover {
+.menu li a:hover {
     color: lime;
 }
 
-ul:hover {
+.menu:hover {
     box-shadow: 0 0 5px lightblue inset;
 }
 
@@ -92,10 +95,9 @@ ul:hover {
     z-index: -1;
     top: 0;
     right: 0;
-    bottom: 0;
-    left: 0;
     min-width: 100%;
-    visibility: hidden; /* Hide element */
+    min-height: 100%;
+    /*visibility: hidden; /* Hide element */
 }
 
 .video-text {
@@ -103,22 +105,25 @@ ul:hover {
     width: 100%;
     background: rgba(5,5,5,0.1);
     color: white;
-    position: relative;
-
-    
+    position: relative;    
 }
 
 .title-text {
+    font-family: 'Lucida Sans';
     font-size: 3em;
     letter-spacing: 5px;
     text-shadow: 3px 3px 3px rgb(67, 25, 255);
+    border: none;
 }
+
+.title-text:hover {
+    text-shadow: 0 0 10px rgb(67,25,255);
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+
 
 /**********  TABLE  **********/
-
-.row {
-
-}
 
 .row:after {
     content:" ";
@@ -127,14 +132,16 @@ ul:hover {
 }
 
 .image-box {
-    padding: 10px;
+    padding: 50px;
     width: 50%;
-    height: 400px;
+    height: 500px;
     float: left;
-    background-color: lightgrey;
-    /*background-image: url('../images/circuits.jpg');*/
+    background-image: url('../images/circuits_cool.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(60%);
     overflow: hidden;
-
+    text-align: center;
 }
 
 .image-box-tall {
@@ -145,20 +152,66 @@ ul:hover {
 
 .text-box {
     padding: 10px;
+    padding-top: 5%;
     width: 50%;
-    height: 400px;
+    height: 500px;
     float: left;
-    background-color: wheat;
-
+    background-color: rgba(146, 197, 221,0.6);
+    text-align: center;
 }
 
+.text-box h1 {
+    margin: 20px auto;
+    width: 60%;
+}
+
+.text-box p {
+    margin: 0 auto;
+    width: 80%;
+    height: 300px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+
 .text-box-tall {
+
     padding-top: 5%;
     height: 500px;
 }
 
 
-.logo {
-    color: rgb(67, 25, 255);
-    font-size: 2em;
+/**********  FORM  **********/
+
+input[type=text], textarea {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+    font-family: 'Lucida Sans', sans-serif;
+    resize: none;
 }
+
+input[type=submit] {
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 5px white inset;
+    background-color:rgb(101, 180, 216);
+    font-weight: bold;
+    display: block;
+}
+
+form {
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 80%;
+    background-color: rgba(5,5,5,0.6);
+}
+
