@@ -210,7 +210,8 @@ img:hover { /* Image hover effect */
     margin: 10px auto;
     width: 80%;
     height: 300px;
-    background-color: rgba(5,5,5,0.6);  
+    background-color: rgba(5,5,5,0.6);
+    color: white;  
     text-align: justify; 
     line-height: 1.3em; 
 }
