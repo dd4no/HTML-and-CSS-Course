@@ -2,7 +2,7 @@
 
 ## The Tech Academy Projects
 
->A repository for my course projects
+>Repository for course projects, assignments, and demos
 ---
 ### PROJECT LIST
 
