@@ -15,10 +15,40 @@
             /* Center image and apply filter and rounded corners*/
             #photo1 {
                 display: block;
-                margin: 10% auto;
-                width: 50%;
+                margin: 0 auto;
+                margin-top: 55px;
+                width: 500px;
                 filter: invert(100%);
                 border-radius: 15px;
+            }
+
+            button {
+                position: absolute;              
+                padding: 5px;
+                font-weight: bold;
+                border: 1px solid black;
+                border-radius: 10px;
+                box-shadow: 0 5px gray;
+                outline: none;
+                right: 15px;
+            }
+
+            button:hover {
+                background-color: rgb(143, 143, 143);
+            }
+
+            button:active {
+                outline: none;
+                box-shadow: 0 1px gray;
+                transform: translateY(4px)
+            }
+
+            .sticky {
+                position: sticky;
+                padding: 10px;
+                margin-bottom: 20px;
+                z-index: 11;
+                top: 50px;
             }
 
             /* Add footer with bold and centered text */
@@ -176,7 +206,6 @@
                 text-align: center;
             }
 
-
         </style>
 	</head>
 	
@@ -197,6 +226,10 @@
         <!-- Image with CSS styling -->
         <div id="image1" class="img-container">
           <img id="photo1" src="guitar.jpg" alt="guitar">
+        </div>
+
+        <div class="sticky">
+            <button>Take a Quiz</button>
         </div>
 
         <!-- Table Example -->
