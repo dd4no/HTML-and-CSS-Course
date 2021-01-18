@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: rgba(0,0,0,0.4);
     font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
@@ -48,7 +52,8 @@ div {
     margin: 0px auto;
 }
 table {
-    width: 100%;
+    margin: 0 auto;
+    width: 60%;
     border-collapse: collapse;
 }
 
@@ -106,7 +111,10 @@ form input[type="submit"] {
     font-weight: 900;
     width: 100px;
     background: silver;
+}
 
+footer {
+    text-align: center;
 }
 
 /* Modal */
