@@ -6,53 +6,83 @@
     <!-- github.com/dd4no           -->
 
 	<head>
+
 		<meta charset= "utf-8">
-		<title>Dave Defourneaux</title>
-		<link rel="stylesheet" type="text/css" href="./css/portfolio.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dave Defourneaux</title>
+        <meta name="author" content="Dave Defourneaux">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="./css/portfolio.css">
+        
 	</head>
     
-    <!--====================  BODY ====================-->
+    <!-- BODY -->
 	<body>
 
-        <!----------  NAVBAR  ---------->        
+        <!--  NAVBAR  -->        
         <div class="navbar">
             <ul class="menu">
                 <li><a href="#home">HOME</a></li>
+                <li><a href="#slides">SLIDESHOW</a></li>
                 <li><a href="#about">ABOUT</a></li>
                 <li><a href="#github">GITHUB</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <li><a onclick="openForm()" ondblclick="closeForm()">CONTACT</a></li>
             </ul>
         </div>
-        <!----------  END NAVBAR  ---------->
+        <!--  END NAVBAR  -->
 
-        <!----------  BACKGROUND VIDEO  ---------->
+        <!--  BACKGROUND VIDEO  -->
         <div id="home">
             <video autoplay muted loop id="video">
                 <source src="./images/video/background_video.mp4" type="video/mp4">
                 Your browser does not support HTML5 video
             </video>
         </div>
-        <!----------  END BACKGROUND VIDEO  ---------->
+        <!--  END BACKGROUND VIDEO  -->
 
-        <!----------  TITLE TEXT  ---------->
+        <!--  TITLE TEXT  -->
         <div class="title-text">
             <h1 class="title">Dave Defourneaux</h1>
             <h2>portfolio website</h2>
+            <p>Experienced Front-end developer with HTML5/CSS3 and JavaScript</p>
+            <p>Studying C#/.NET development and database management with SQL</p>
+            <p>at <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a></p>
+            <p>Coding in Visual Studio Code and utilizing Chrome DevTools</p>
             <h5><a href="https://github.com/dd4no" target="_blank">github.com/dd4no</a></h5>
             <br>
             <br>
             <br>
         </div>
-        <!----------  END TITLE TEXT  ---------->
+        <!--  END TITLE TEXT  -->
 
-        <!----------  CONTENT TABLE  ----------> 
+        <!--  SLIDESHOW  -->
+        <div id="slides">
+            <div id="slideBox">
+                <div id="slideShow">
+                    <div class="slide fade">
+                        <div class="slideNumber"></div>
+                        <img class="slideImage" src="images/" alt="" style>
+                        <div class="slideTitle"></div>
+                    </div>        
+                    <a class="backButton" onclick="changeSlide(-1)">&#10094;</a>
+                    <a class="fwdButton" onclick="changeSlide(1)">&#10095;</a>        
+                </div>
+                <div>
+                    <span class="dot" onclick="currentSlide()"></span>            
+                    <span class="dot" onclick="currentSlide()"></span>
+                    <span class="dot" onclick="currentSlide()"></span>
+                </div>
+            </div>
+        </div>
+        <!--  END SLIDESHOW  -->
+
+        <!--  CONTENT TABLE  --> 
         <div class="content">
             
             <!-- ABOUT - Row 1 -->
             <div class="row" id="about">
                 <div class="image-box">
-                    <img src="./images/me4.jpg" alt="Me">
+                    <!--<img src="./images/me4.jpg" alt="Me">-->
                 </div>
                 <div class="text-box">
                     <h1>ABOUT ME</h1>
@@ -85,59 +115,53 @@
                     <h1>GITHUB PROJECTS</h1>
                     <div class="text-box-text">
                         <h3>Code I've written</h3>
-                        <ul>
-                            <li><a href="https://github.com/dd4no/hello-world" target="_blank">Hello World</a></li>
-                                <ul>
-                                    <li>Odds and Ends for practice and fun</li>
-                                </ul>
-                            <li><a href="https://github.com/dd4no/HTML-and-CSS-Course/tree/main/Complete_Website_Project" target="_blank">Complete Website Project</a></li>
-                                <ul>
-                                    <li>Example photography gallery</li>
-                                </ul>
-                            <li><a href="https://github.com/dd4no/HTML-and-CSS-Course/tree/main/One-Page%20Website" target="_blank">One-Page Website Project</a></li>
-                                <ul>
-                                    <li>Music Exchange Club home page</li>
-                                </ul>
-                            <li><a href="https://github.com/dd4no/HTML-and-CSS-Course" target="_blank">Tech Academy Assignments</a></li>
-                                <ul>
-                                    <li>Various code examples and demonstrations</li>
-                                </ul>
-                        </ul>
+                        <dl>
+                            <dt><a href="https://github.com/dd4no/hello-world" target="_blank">Hello World</a></dt>
+                                <dd>Odds and Ends for practice and fun</dd>
+                            <dt><a href="https://github.com/dd4no/HTML-and-CSS-Course/tree/main/Complete_Website_Project" target="_blank">Complete Website Project</a></dt>
+                                <dd>Example photography gallery</dd>
+                            <dt><a href="https://github.com/dd4no/HTML-and-CSS-Course/tree/main/One-Page%20Website" target="_blank">One-Page Website Project</a></dt>
+                                <dd>Music Exchange Club home page</dd>
+                            <dt><a href="https://github.com/dd4no/HTML-and-CSS-Course" target="_blank">Tech Academy Assignments</a></dt>
+                                <dd>Various code examples and demonstrations</dd>
+                        </dl>
                     </div>                           
                 </div>
                 <div class="image-box">
-                    <img src="./images/me2.jpg" alt="Me">
+                    <!--<img src="./images/me2.jpg" alt="Me">-->
                 </div>
             </div>
             <!-- END GITHUB -->
-
-            <!-- CONTACT - Row 3 -->
-            <div class="row" id="contact">
-                <div class="image-box">
-                    <img src="./images/me3.jpg" alt="Me">
-                </div>
-                <div class="text-box">
-                    <h1>CONTACT ME</h1>
-                    <form action="https://formspree.io/f/xayllvge" method="post">
-                        <input type="text" name="Name" placeholder="Please enter your name">
-                        <input type="text" name="Email"placeholder="Please enter your email address">
-                        <textarea rows="8" name="Comments"placeholder="Please leave me a comment"></textarea>
-                        <input type="submit" value="SEND">
-                    </form>
-                </div>
-            </div>
-            <!-- END CONTACT -->
         
         </div>
-        <!----------  END CONTENT TABLE  ---------->
+        <!--  END CONTENT TABLE  -->
 
-        <!----------  FOOTER  ---------->
+        <!--  CONTACT  -->
+        <div id="contact">
+            <button onclick="openForm()" class="popupButton">CONTACT ME</button>
+            <div class="popupForm" id="contactForm">
+                <form action="https://formspree.io/f/xayllvge" method="post">
+                    <h1>Contact Form:</h1>
+
+                    <input type="text" name="Name" placeholder="Please enter your name">
+                    <input type="text" name="Email" placeholder="Please enter your email address" required>
+                    <textarea rows="8" name="Comments" placeholder="Please leave me a comment"></textarea>
+
+                    <button type="submit" class="btn">SEND</button>
+                    <button type="button" class="btnCancel" onclick="closeForm()">CANCEL</button>
+                </form>
+            </div>
+        </div>
+        <!--  END CONTACT  -->
+
+
+        <!--  FOOTER  -->
         <footer>
-            <p>&copy; Dave Defourneaux &nbsp | &nbsp <a href="http://www.davedefourneaux.com" target="_blank">www.davedefourneaux.com</a></p>
+            <p>&copy; Dave Defourneaux &nbsp; | &nbsp; <a href="http://www.davedefourneaux.com" target="_blank">www.davedefourneaux.com</a></p>
         </footer>
-        <!----------  END FOOTER  ---------->
+        <!--  END FOOTER  -->
 
     </body>
-    <!--====================  END BODY  ====================-->
+    <!--  END BODY  -->
 
 </html>

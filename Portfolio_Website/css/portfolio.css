@@ -9,9 +9,10 @@
     box-sizing: border-box; 
 }
 
-html { /* Default font family and size */
+html { /* Default font family and size and scroll behavior*/
     font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
-    font-size: 16px; 
+    font-size: 2vw;
+    scroll-behavior: smooth;
 }
 
 body { /* Display site to edge of browser screen */
@@ -75,7 +76,6 @@ footer  { /* Set footer container and appearance */
     width: 100%;
     position: fixed;
     z-index: 1;
-    text-align: center;
     animation: moveNav 3s;    
 }
 
@@ -85,8 +85,6 @@ footer  { /* Set footer container and appearance */
     border-radius: 10px;
     margin: 0 auto;
     text-align: center;
-    display: block;
-    list-style: none;
     background-color: rgb(25,25,25);
     opacity: 90%;
     width: 80%;    
@@ -94,7 +92,7 @@ footer  { /* Set footer container and appearance */
 
 .menu li { /* Navbar list items */
     display: inline-block;
-    padding: 5px 50px;
+    padding: 5px 10px;
     font-size: 1.5em;
 }
 
@@ -110,7 +108,7 @@ footer  { /* Set footer container and appearance */
 /* Reduce Navbar to equal spaced cells for small screens */
 @media screen and (max-width: 576px) {
     .navbar a{
-        width: 25%;
+        width: 20%;
         font-size: 12px;
     }
 }
@@ -133,10 +131,8 @@ footer  { /* Set footer container and appearance */
     position: relative;
     padding: 100px;
     width: 100%;
-    background-color: rgba(5,5,5,0.1);
-    font-family: 'Lucida Console';
-    color:rgb(101, 180, 216);
-    letter-spacing: 5px;
+    color:rgb(178, 201, 211);
+    letter-spacing: .1vw;
     text-shadow: 3px 3px 10px rgb(67, 25, 255);
     border: none;
     animation: fadeInAnimation ease 6s;
