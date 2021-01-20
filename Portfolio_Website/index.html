@@ -23,7 +23,7 @@
         <div class="navbar">
             <ul class="menu">
                 <li><a href="#home">HOME</a></li>
-                <li><a href="#slides">SLIDESHOW</a></li>
+                <li><a href="#slides">SKILLS</a></li>
                 <li><a href="#about">ABOUT</a></li>
                 <li><a href="#github">GITHUB</a></li>
                 <li><a onclick="openForm()" ondblclick="closeForm()">CONTACT</a></li>
@@ -44,9 +44,9 @@
         <div class="title-text">
             <h1 class="title">Dave Defourneaux</h1>
             <h2>portfolio website</h2>
-            <p>Experienced Front-end developer with HTML5/CSS3 and JavaScript</p>
-            <p>Studying C#/.NET development and database management with SQL</p>
-            <p>at <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a></p>
+            <p>Front-end developer with extensive HTML5/CSS3 and JavaScript experience</p>
+            <p>Studying C#/.NET development and SQL database management at</p>
+            <p><a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a></p>
             <p>Coding in Visual Studio Code and utilizing Chrome DevTools</p>
             <h5><a href="https://github.com/dd4no" target="_blank">github.com/dd4no</a></h5>
             <br>
@@ -60,17 +60,45 @@
             <div id="slideBox">
                 <div id="slideShow">
                     <div class="slide fade">
-                        <div class="slideNumber"></div>
-                        <img class="slideImage" src="images/" alt="" style>
-                        <div class="slideTitle"></div>
+                        <div class="slideNumber">1 / 6</div>
+                        <img class="slideImage" src="images/html5.png" alt="html" style="width:100%">
+                        <div class="slideTitle">HTML5</div>
+                    </div>        
+                    <div class="slide fade">
+                        <div class="slideNumber">2 / 6</div>
+                        <img class="slideImage" src="images/css3.png" alt="css" style="width:100%">
+                        <div class="slideTitle">CSS3</div>
+                    </div>        
+                    <div class="slide fade">
+                        <div class="slideNumber">3 / 6</div>
+                        <img class="slideImage" src="images/bootstrap4.png" alt="bootstrap" style="width:100%">
+                        <div class="slideTitle">Bootstrap 4</div>
+                    </div>        
+                    <div class="slide fade">
+                        <div class="slideNumber">4 / 6</div>
+                        <img class="slideImage" src="images/javascript.png" alt="js" style="width:100%">
+                        <div class="slideTitle">JavaScript</div>
+                    </div>        
+                    <div class="slide fade">
+                        <div class="slideNumber">5 / 6</div>
+                        <img class="slideImage" src="images/jquery.png" alt="jQuery" style="width:100%">
+                        <div class="slideTitle">jQuery</div>
+                    </div>        
+                    <div class="slide fade">
+                        <div class="slideNumber">6 / 6</div>
+                        <img class="slideImage" src="images/python.png" alt="python" style="width:100%">
+                        <div class="slideTitle">Python</div>
                     </div>        
                     <a class="backButton" onclick="changeSlide(-1)">&#10094;</a>
                     <a class="fwdButton" onclick="changeSlide(1)">&#10095;</a>        
                 </div>
-                <div>
-                    <span class="dot" onclick="currentSlide()"></span>            
-                    <span class="dot" onclick="currentSlide()"></span>
-                    <span class="dot" onclick="currentSlide()"></span>
+                <div id="dots">
+                    <span class="dot" onclick="currentSlide(1)"></span>            
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>            
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
                 </div>
             </div>
         </div>
@@ -82,7 +110,9 @@
             <!-- ABOUT - Row 1 -->
             <div class="row" id="about">
                 <div class="image-box">
-                    <!--<img src="./images/me4.jpg" alt="Me">-->
+                    <div class="image">
+                        <img src="./images/me4.jpg" alt="Me" style="width:100%">
+                    </div>
                 </div>
                 <div class="text-box">
                     <h1>ABOUT ME</h1>
@@ -110,8 +140,8 @@
             <!-- END ABOUT -->
 
             <!-- GITHUB - Row 2 -->
-            <div class="row" id="github">
-                <div class="text-box">
+            <div class="row">
+                <div class="text-box"  id="github">
                     <h1>GITHUB PROJECTS</h1>
                     <div class="text-box-text">
                         <h3>Code I've written</h3>
@@ -122,13 +152,21 @@
                                 <dd>Example photography gallery</dd>
                             <dt><a href="https://github.com/dd4no/HTML-and-CSS-Course/tree/main/One-Page%20Website" target="_blank">One-Page Website Project</a></dt>
                                 <dd>Music Exchange Club home page</dd>
-                            <dt><a href="https://github.com/dd4no/HTML-and-CSS-Course" target="_blank">Tech Academy Assignments</a></dt>
-                                <dd>Various code examples and demonstrations</dd>
+                            <dt><a href="https://github.com/dd4no/HTML-and-CSS-Course" target="_blank">Tech Academy HTML Assignments</a></dt>
+                                <dd>HTML/CSS examples and demonstrations</dd>
+                            <dt><a href="https://github.com/dd4no/JavaScript-Course/tree/master/TicTacToe" target="_blank">Tic Tac Toe</a></dt>
+                                <dd>Operational game using JavaScript</dd>
+                            <dt><a href="https://github.com/dd4no/JavaScript-Course/tree/master/Calculator" target="_blank">Calculator</a></dt>
+                                <dd>Functional calculator app using JavaScript</dd>
+                            <dt><a href="https://github.com/dd4no/JavaScript-Course" target="_blank">Tech Academy JS Assignments</a></dt>
+                                <dd>JavaScript code examples and demonstrations</dd>
                         </dl>
                     </div>                           
                 </div>
                 <div class="image-box">
-                    <!--<img src="./images/me2.jpg" alt="Me">-->
+                    <div class="image">
+                        <img src="./images/me2.jpg" alt="Me" style="width:100%;">
+                    </div>
                 </div>
             </div>
             <!-- END GITHUB -->
@@ -138,8 +176,10 @@
 
         <!--  CONTACT  -->
         <div id="contact">
-            <button onclick="openForm()" class="popupButton">CONTACT ME</button>
-            <div class="popupForm" id="contactForm">
+            <div id="buttonBox">
+                <button onclick="openForm()" class="popupButton">CONTACT ME</button>
+            </div>
+            <div class="popupForm" id="form">
                 <form action="https://formspree.io/f/xayllvge" method="post">
                     <h1>Contact Form:</h1>
 
@@ -148,7 +188,7 @@
                     <textarea rows="8" name="Comments" placeholder="Please leave me a comment"></textarea>
 
                     <button type="submit" class="btn">SEND</button>
-                    <button type="button" class="btnCancel" onclick="closeForm()">CANCEL</button>
+                    <button type="button" class="btn btnCancel" onclick="closeForm()">CANCEL</button>
                 </form>
             </div>
         </div>
@@ -160,6 +200,8 @@
             <p>&copy; Dave Defourneaux &nbsp; | &nbsp; <a href="http://www.davedefourneaux.com" target="_blank">www.davedefourneaux.com</a></p>
         </footer>
         <!--  END FOOTER  -->
+
+        <script src="js/portfolio.js"></script>
 
     </body>
     <!--  END BODY  -->

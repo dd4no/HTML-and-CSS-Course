@@ -11,12 +11,13 @@
 
 html { /* Default font family and size and scroll behavior*/
     font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
-    font-size: 2vw;
+    font-size: 1.5vw;
     scroll-behavior: smooth;
 }
 
 body { /* Display site to edge of browser screen */
     margin: 0%; 
+    user-select: none;
 }
 
 a { /* Set appearance for all anchor elements */
@@ -33,20 +34,26 @@ a:hover { /* Set all anchor hover effects */
 h1, h2, h3, h4, h5, p {
     text-align: center;
 }
+p { /* Set font size and margin for paragraphs */
+    font-size: 1.25rem;
+    margin: .2vw;
+}
 
-img { /* Add a border to images and set height */
+img { /* Add a border to images and set size */
     padding: 0;
     border: 2px dotted white;
     box-shadow: -5px -3px 10px white;
     border-radius: 10px;
-    width: 300px;
-    height: 300px;
+}
+
+img:hover { /* Image hover effect */
+    transform: scale(0.9);
+    transition: transform 2s ease-in-out;
 }
 
 footer  { /* Set footer container and appearance */
-    padding: 2px;
-    background-color: rgb(25,25,25);
-    opacity: 90%;
+    padding: .1vw;
+    background-color: rgba(25,25,25,0.9);
     color: white;
 }
 
@@ -57,14 +64,6 @@ footer  { /* Set footer container and appearance */
     }
     100% {
         opacity: 1;
-    }
-}
-
-/* Shrink images and center in column for small screens */
-@media screen and (max-width: 576px) {
-    img { 
-        height: 100px;
-        margin-top: 150px;
     }
 }
 /**********  END GENERAL STYLES **********/
@@ -85,8 +84,7 @@ footer  { /* Set footer container and appearance */
     border-radius: 10px;
     margin: 0 auto;
     text-align: center;
-    background-color: rgb(25,25,25);
-    opacity: 90%;
+    background-color: rgba(25,25,25,0.9);
     width: 80%;    
 }
 
@@ -104,14 +102,6 @@ footer  { /* Set footer container and appearance */
     from {top: -100vw;}
     to {top: 0vw;}
 }
-
-/* Reduce Navbar to equal spaced cells for small screens */
-@media screen and (max-width: 576px) {
-    .navbar a{
-        width: 20%;
-        font-size: 12px;
-    }
-}
 /**********  END NAVBAR **********/
 
 /**********  BACKGROUND VIDEO  **********/
@@ -127,65 +117,174 @@ footer  { /* Set footer container and appearance */
 /**********  END BACKGROUND VIDEO  **********/
 
 /**********  TITLE TEXT  **********/
+
 .title-text { /* Title Text container */
     position: relative;
-    padding: 100px;
+    padding: 7vw;
     width: 100%;
+    height: 70vw;
     color:rgb(178, 201, 211);
-    letter-spacing: .1vw;
+    letter-spacing: .2vw;
     text-shadow: 3px 3px 10px rgb(67, 25, 255);
     border: none;
+    background-color: rgba(0,0,0,0.5);
     animation: fadeInAnimation ease 6s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
-.title-text h1 { /* Title */
-    font-size: 3em;
+.title { /* Title */
+    font-size: 5vw;
     border: none;
 }
 
-.title-text h1:hover { /* Title hover effect */
-    text-shadow: 0 0 10px rgb(67,25,255);
+.title:hover { /* Title hover effect */
     transform: scale(0.9);
     transition: transform 1.5s ease-in-out;
 }
 /**********  END TITLE TEXT  **********/
 
+/**********  SLIDESHOW  **********/
+
+#slides { /* Slideshow section container */
+    margin: 0;
+}
+
+.slide { /* Hide slides by default for JavaScript slideshow */
+    display: none;
+}
+
+#slideShow { /* Position slide within container */
+    position: relative;
+    padding-top: 6%;
+    width: 30vw;
+    height: auto;
+    margin: auto;    
+}
+
+.slideImage { /* Slide content */
+    vertical-align: middle;
+    width: 400px;
+    height: auto;
+    background-color: rgba(255,255,255, 0.35);
+}
+
+/* Format controls */
+.backButton, .fwdButton {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 2vw;
+    border-radius: 0 3px 3px 0;
+    margin-top: -0vw;
+    width: auto;
+    font-weight: bold;
+    transition: 0.6 ease;    
+}
+
+.fwdButton {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.backButton:hover, .fwdButton:hover {
+    background-color: rgba(0,0,0,0.6);
+}
+
+.slideTitle { /* Format slide caption */
+    position: absolute;
+    bottom: 0;
+    padding: .5vw;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+    color: white;
+}
+
+.slideNumber { /* Format slide numbering */
+    position: absolute;
+    top: 2vw;
+    display: none; /* Hidden */
+    padding-top: 3vw;
+    margin: 2vw auto;
+    border-radius: 7px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.dot { /* Format slide thumbnail controls */
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    margin: .25vw;
+    width: 1vw;
+    height: 1vw;
+    background-color: white;
+    z-index: 1;
+}
+
+.dot:hover {
+    background-color: gray;
+}
+
+#dots { /* Thumbnail control container */
+    padding: 2vw;
+    text-align: center;
+}
+
+.active {
+    background-color: rgb(67, 25, 255);
+}
+
+.fade { /* Fade effect for slides */
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+/**********  END SLIDESHOW **********/
+
 /**********  CONTENT TABLE  **********/
-/* ABOUT , GITHUB , CONTACT, IMAGES  */
+/* ABOUT and GITHUB */
 
 .content { /* Container for main content table */
     padding: 0;
-    margin: 0;
+    margin-top: 0;
     animation: fadeInAnimation ease 8s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
 .image-box { /* Image container */
-    padding: 50px;
+    padding-top: 10vw;
     width: 50%;
-    height: 500px;
+    height: 70vw;
     float: left;
     background-image: url('../images/circuits_cool.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    filter: grayscale(60%);
-    overflow: hidden;
+    filter: grayscale(65%);
     text-align: center;
 }
 
-img:hover { /* Image hover effect */
-    transform: scale(0.9);
-    transition: transform 2s ease-in-out;
+.image { /* Image container images */
+    position: relative;
+    margin: auto;
+    width: 300px;
+    height: 300px;
 }
 
-.text-box { /* Text or Form container */
+.text-box { /* Text container */
     padding: 10px;
     padding-top: 3%;
     width: 50%;
-    height: 500px;
+    height: 70vw;
     float: left;
     background-color: rgba(146, 197, 221,0.6);
     text-align: center;
@@ -200,16 +299,19 @@ img:hover { /* Image hover effect */
 
 .text-box-text { /* Text container paragraphs */
     padding: 20px;
-    padding-top: 5%;
     border: 1px solid white;
     border-radius: 10px;
-    margin: 10px auto;
+    margin: 5px auto;
     width: 80%;
-    height: 300px;
     background-color: rgba(5,5,5,0.6);
     color: white;  
-    text-align: justify; 
-    line-height: 1.3em; 
+    font-size: 1.1rem;
+    text-align: left; 
+    line-height: 1.4em; 
+}
+
+#github dd { /* Descriptors for project list */
+    font-size: 1rem;
 }
 
 .row:after { /* Resets left and right floating after each row */
@@ -218,23 +320,74 @@ img:hover { /* Image hover effect */
     clear: both;
 }
 
+/* Stack containers vertically on small screens */
 /* Add scroll bar for overflowing text on small screens */
+/* Reduce image size for small screens */
 @media screen and (max-width: 576px) {
+    .text-box, .image-box {
+        width: 100%;
+    }
     .text-box {
         overflow: auto;
+    }
+    .image {
+        width: 200px;
+        height: auto;
     }
 }
 /**********  END CONTENT TABLE **********/
 
 /**********  CONTACT FORM  **********/
 
-form { /* Form container */
-    padding: 20px;
+#buttonBox { /* Open Form Button container */
+    position: fixed;
+    bottom: 4vw;
+    width: 100%;
+    text-align: center;
+}
+.popupButton { /* Open Form Button */
+    position: relative;
+    padding: .5vw;
+    border-radius: 10px;
+    box-shadow: 3px 3px 2px black;
+    outline: none;
+    margin: 0 auto;
+    width: 20vw;
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.popupButton:hover {
+    background-color: rgb(25,25,25);
+    color: dodgerblue;
+    text-shadow: 0 0 10px lime;
+}
+
+.popupButton:active {
+    box-shadow: 1px 1px 2px black;
+}
+
+.popupForm { /* Form container */
+    position: fixed;
+    bottom: 4vw;
+    display: none;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+form { /* Form */
+    padding: 3vw;
     border: 1px solid white;
     border-radius: 10px;
     margin: 0 auto;
-    width: 80%;
-    background-color: rgba(5,5,5,0.6);
+    width: 65%;
+    background-color: rgba(25,25,25,1);
+}
+form h1 { /* Form Header */
+    color: white;
+    font-size: 2rem;
 }
 
 input[type=text], textarea { /* Text input fields */
@@ -250,23 +403,25 @@ input[type=text], textarea { /* Text input fields */
 
 /* Text input hover effect */
 input[type=text]:hover, textarea:hover{
-    box-shadow: 2px 2px 3px black inset;
+    box-shadow: 0 0 10px rgb(67,25,255) inset;
 }
 
-input[type=submit] { /* Send button */
-    padding: 10px 15px;
-    border: 1px solid black;
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 0 5px white inset;
-    background-color:rgb(101, 180, 216);
-    font-weight: bold;
-    display: block;
+.btn { /* Form Button */
+    padding: 5px;
+    outline: none;
+    text-align: center;
 }
 
-input[type=submit]:hover { /* Send button hover effect */
-    box-shadow: 0 0 10px lime, 2px 2px 3px black inset;
-    text-shadow: 0 0 10px lime;
+.btn:hover {
+    box-shadow: 0 0 5px lime, 2px 2px 3px white ;
+}
+
+.btnCancel { /* Cancel Button */
+    background-color: darkred;
+    color: white;
+}
+
+.btnCancel:hover {
+    box-shadow: 0 0 5px red, 2px 2px 3px white;
 }
 /**********  END CONTACT FORM **********/
